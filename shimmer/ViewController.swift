@@ -34,9 +34,9 @@ class ViewController: UIViewController {
         view.addSubview(shinyTextLabel)
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
-        gradientLayer.locations = [0, 1]
-        gradientLayer.frame = view.frame
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 0.5, 1]
+        gradientLayer.frame = shinyTextLabel.frame
         
         view.layer.addSublayer(gradientLayer)
     }
