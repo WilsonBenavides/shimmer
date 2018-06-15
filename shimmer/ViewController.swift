@@ -38,8 +38,43 @@ class ViewController: UIViewController {
         gradientLayer.locations = [0, 0.5, 1]
         gradientLayer.frame = shinyTextLabel.frame
         
-        view.layer.addSublayer(gradientLayer)
+        let angle = 45 * CGFloat.pi / 180
+        gradientLayer.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
+        
+        shinyTextLabel.layer.mask = gradientLayer
+        
+        //animation
+        let animation = CABasicAnimation(keyPath: "transform.translation.x")
+        animation.duration = 2
+        animation.fromValue = -view.frame.width
+        animation.toValue = view.frame.width
+        animation.repeatCount = Float.infinity
+        
+        gradientLayer.add(animation, forKey: "doesn'tmatterJustSomeKey")
+        
+        //view.layer.addSublayer(gradientLayer)
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
